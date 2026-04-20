@@ -57,8 +57,10 @@ La web app si occupa della gestione di una lista di film e relative recensioni.
 root/
 ├── database/
 |   ├── db.js - handles the connection to the database
-├── routes/
+├── routers/
 │   ├── movies.js - handles the routes for the movies
+├── controllers/
+│   ├── moviesController.js - handles the logic for the movies
 ├── public/
 │   ├── images - contains the movies images
 ├── server.js - starts the server
