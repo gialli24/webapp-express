@@ -7,6 +7,9 @@ const moviesRouter = require("./routers/movies");
 /* Public Middleware */
 app.use(express.static("public"));
 
+/* Cors */
+app.use(cors());
+
 app.get("/", (req, res) => {
     res.send("Welcome to Movies App");
 });
