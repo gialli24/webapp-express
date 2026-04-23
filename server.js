@@ -4,6 +4,8 @@ const port = process.env.port || 3000;
 const cors = require("cors");
 
 const moviesRouter = require("./routers/movies");
+const reviewsRouter = require("./routers/reviews");
+
 
 const errorHandler = require("./middlewares/errorHandler");
 const notFound = require("./middlewares/notFound");
@@ -20,6 +22,8 @@ app.get("/", (req, res) => {
 
 /* Router */
 app.use("/movies", moviesRouter);
+
+app.use("/reviews", reviewsRouter);
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}. http://localhost:${port}`);

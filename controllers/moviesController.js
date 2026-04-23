@@ -1,7 +1,12 @@
 const conn = require("../database/db");
 
 const index = (req, res) => {
-    const sql = "SELECT * FROM movies";
+    const sql = `
+        SELECT movies.*, ROUND(AVG(reviews.vote), 1) AS votes_avg
+        FROM movies
+        JOIN reviews ON movies.id = reviews.movie_id
+        GROUP BY movies.id
+    `;
 
     conn.query(sql, (err, results) => {
         if (err) return res.status(500).send("Internal Server Error");
