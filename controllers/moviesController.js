@@ -2,7 +2,7 @@ const conn = require("../database/db");
 
 const index = (req, res) => {
     const sql = `
-        SELECT movies.*, ROUND(AVG(reviews.vote), 1) AS votes_avg
+        SELECT movies.*, ROUND(AVG(reviews.vote), 1) AS rating_avg
         FROM movies
         JOIN reviews ON movies.id = reviews.movie_id
         GROUP BY movies.id

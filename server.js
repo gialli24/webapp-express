@@ -13,6 +13,9 @@ const notFound = require("./middlewares/notFound");
 /* Public Middleware */
 app.use(express.static("public"));
 
+app.use(express.json());
+
+
 /* Cors Middleware */
 app.use(cors());
 
